@@ -15,14 +15,7 @@
 }
 body{
 	font-size: 20px;
-	/*background: #111;*/
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-image: url("img/oi.jfif");
-}
-.wrapper{
+	background: black;
 	height: 100vh;
 	display: flex;
 	align-items: center;
@@ -45,86 +38,21 @@ body{
 				0 0 0 20px limegreen,
 				0 0 0 30px darkorange;
 }
-::-webkit-scrollbar{
-	width: 16px;
-	height: 16px;
-}
-::-webkit-scrollbar-track{
-	background: #ddd;
-	border-radius: 15px;
-}
-::-webkit-scrollbar-thumb{
-	background: #888;
-	border-radius: 15px;
-}
-.alT{
-	opacity: 1;
-}
-.texT{
+.texT{ left: 0px;
 	position: fixed; bottom: 10%; color: #999;
 	text-shadow: 0 2px 0 #f00fff,
 			 0 -2px 0 #fff;
 
 }
-.cElect{
-	z-index: 6;
-	right: 41px;
-	bottom: 90px;
-	color: white; 
-	display: block;
-	cursor: pointer;
-	position: fixed;
-	font-size: 22px;
-	background: #111;
-	border-radius: 100px;
-	padding: 6px 12px 10px;
-	transition: all 0.2s ease;
-	border: 2px solid rgba(255,255,9,.3);
-	animation: animate 1s linear infinite;
-	box-shadow: 0 0 0 2px green,
-		    0 0 0 3px deepskyblue;
-	animation: El 1s ease-in-out infinite;
-}
-.cElect:active{
-	transform: scale(0.88);
-}
-@keyframes El{
-0%{
-	transform: translateY(0);
-}
-50%{
-	transform: translateY(-1px);
-}
-100%{
-	transform: translateY(0);
-}
-}
 a{
 	text-decoration: none;
 }
-@media only screen and (max-width: 900px){
-.cElect{
-	right: 15px;
-	bottom: 50px;
-	color: white;
-	font-size: 20px;
-	padding: 3px 8px 5px;
-}
-}
 </style>
 </head>
-<body onload="initClock()">
-<a href="mailto:p1335614@gmail.com" title="Contactar" class="cElect" onclick="audio.play()">@</a>
-<p class="texT">Oiceo number visit:<p>
-<div class="wrapper">
+<body><!--1329 -- 19.03-->
+<p class="texT">Compra Capital KI number visit:<p>
 <div class="box">
 <a href="https://www.contadorvisitasgratis.com" target="_blank" class="alT" title="Visitas"><img src="https://counter3.optistats.ovh/private/contadorvisitasgratis.php?c=wk1xp84lnfng6zj15999ssps95nxx8p4" border="0"></a>
 </div>
-</div>
-<!--Script audio clicks-->
-<script type="text/javascript">
-	var audio = new Audio();
-	audio.src = 'audio/a.mp3';
-</script>
 </body>
 </html>
