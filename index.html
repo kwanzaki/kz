@@ -1,58 +1,998 @@
 <!DOCTYPE html>
-<html lang="pt"> 
+<html lang="pt">
 <head>
-<meta charset="utf-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Oiceo Investe</title>
+<title>Kwanzaki investe</title>
 <link rel="shortcut icon" href="img/oi.png"/>
 <style type="text/css">
 *{
 	margin: 0;
 	padding: 0;
 	outline: none;
-	font-family: tahoma;
+	font-family: candara;
+	box-sizing: border-box;
 }
 body{
-	font-size: 20px;
-	background: black;
-	height: 100vh;
+	height: 100vh;	
 	display: flex;
+	color: #111111;
+	font-size: 18px;
 	align-items: center;
 	justify-content: center;
+	background: linear-gradient(350deg, aqua, aqua, blue);
 }
-.box{
-	color: #666;
-	width: 200px;
-	height: 200px;
+#togC{display: none;}
+#togL, #content{display: block; width: 100%; padding: 10px; box-shadow: 0 3px 1px lime;}
+#togL{background: black; cursor: pointer; text-decoration: none; outline: none; color: lime; border-radius: 5px; transition: all 0.5s ease;}
+#togL:active{transform: scale(0.50);}
+#togL:hover{color: gold; box-shadow: 0 5px 6px gold;}
+#content{background: #ededed; padding: 10px;}
+#content{display: none;}
+#togC:checked + #content{display: block;}
+
+#contente{display: none;}
+#togA:checked + #contente{display: block;}
+#contente{background: #ededed; padding: 10px; margin-top: 3px;}
+#togA{display: none;}
+
+#contt{display: none;}
+#togB:checked + #contt{display: block;}
+#contt{background: #ededed; padding: 10px; margin-top: 3px;}
+#togB{display: none;}
+#es{background: #ededed; padding: 10px;}
+#plr{background: #aaeeff; padding: 10px; width: 90%;}
+
+#togLL{background: linear-gradient(160deg, white, aqua,  aqua, white, aqua); cursor: pointer; text-decoration: none; outline: none; color: #fff; padding: 19px; transition: all 0.5s ease;}
+#togLL:hover{background: linear-gradient(160deg, aqua, white, aqua, aqua, white);}
+#togLL, #content{display: block; width: 100%; padding: 10px; box-shadow: 0 1px 6px #fff;}
+/*#togLL:hover{box-shadow: 0 3px 3px aqua;}*/
+#togLL:active{transform: scale(0.50);}
+#contenteee{display: none;}
+#togC:checked + #contenteee{display: block;}
+#esss{background: #aaeeff; padding: 10px; font-weight: bold;}
+#contenteee{background: linear-gradient(30deg, #fff, aqua, #fff, aqua); color: white; margin-top: 3px; padding: 15px;}
+#togC{display: none;}
+.play{
+	width: 100%;
+	color: white;
+	padding: 12px;
+	transition: all 0.5s ease; 
+	background: linear-gradient(90deg, blue, aqua, aqua, aqua, blue);
+}
+.play:hover{
+	background: linear-gradient(20deg, blue, aqua, aqua, aqua, blue);
+}
+.play:active{
+	transform: scale(0.80);
+}
+.contain ul li{ 
+	list-style-type: none; 
+	padding: 9px; 
+	transition: .4s; 
+	border: 1px solid #fff;
+	margin-bottom: 2px; 
+	width: 80%;
+	color: white; 
+	text-decoration: none; 
+	background: aqua;
+}
+.contain ul li:hover{ 
+	color: aqua;  
+	background: white;
+	cursor: pointer;
+}
+.contain{
+	width: 80%;
+	padding: 1em;  
+	position: center;
+	background: linear-gradient(30deg, #fff, aqua, #fff,  aqua, #fff, aqua, #fff);
+}
+#menu{
+	height: 12.5vh;
+	overflow: auto;
+}
+.inpt{ 
+	width: 80%;
+	padding: 9px;  
+	color: #deddde; 
+	font-size: 20px;
+	background: aqua;
+	text-align:center; 
+	border-radius: 50px;
+	margin-bottom: 10px;
+	border: 5px solid #dedede;
+	transition: box-shadow: 0.5s ease;
+}
+.volt{
+	top: 5px;
+	z-index: 9;
+	right: 15px;
+	cursor: pointer;
+	position: fixed;
+	padding: 20px 20px;
+	border-radius: 100px;
+	border: 1px solid white;
+	transition: all 0.5s ease;
+	color: rgba(255,255,255,0.5);
+	border-top: 1px solid transparent;
+	border-bottom: 1px solid transparent;
+	/*animation: anna 2s linear infinite;*/
+}/*
+@keyframes anna{
+100%{
+	transform: rotate(-360deg);
+}
+}*/
+.volt:active{
+	transform: scale(0.50);
+}
+.volt:hover{
+	border: 1px solid rgba(255,255,9,0.5);
+	background: rgba(255,255,255,0.6);
+}
+h1{
+	font-size: 40px; 
+	font-weight: bold; 
+	color: aqua; 
+	cursor: pointer;
+}
+.txt{
+	font-size: 16px; color: aqua;
+}
+button{
+	background: aqua; 
+	font-weight: bold; 
+	width: 88%; 
+	padding: 13px; 
+	font-size: 20px; 
+	color: white; 
+	border-radius: 5px; 
+	border: none; 
+	cursor: pointer; 
+	transition: all 0.4s ease;
+}
+button:active{
+	transform: scale(0.50); 
+}
+.popp{ 
+	top: 0%;
+	left: 0%;
+	right: 0%;
+	width: 100%;
 	display: flex;
 	overflow: auto;
-	background: #001;
+	padding: 10px;
+	height: 100vh;
+	z-index: 99999;
+	position: fixed;
 	align-items: center;
-	border-radius: 15px;
 	justify-content: center;
-	animation: animate 1s linear infinite;
-	box-shadow: 0 0 0 5px white,
-				0 0 0 10px deepskyblue,
-				0 0 0 15px hotpink,
-				0 0 0 20px limegreen,
-				0 0 0 30px darkorange;
+	background: rgba(8,255,255,0.4);
 }
-.texT{ left: 0px;
-	position: fixed; bottom: 10%; color: #999;
-	text-shadow: 0 2px 0 #f00fff,
-			 0 -2px 0 #fff;
-
+.cent{
+	color: aqua;
+	padding: 35px;
+	background: white;	
+	border-radius: 5px;
+	position: relative;
+	text-align: center;
+	/*transition: all 0.4s;*/
+	/*border: 5px solid #ededed;
+	box-shadow: 0 0 3px 1px #ededed;*/
 }
 a{
-	text-decoration: none;
+	text-decoration: none; color: lime; outline: none; transition: all 0.4s ease;
+}
+a:active{
+	transform: scale(0.50);
+}
+#lay{transition: all 0.4s ease;
+}
+#lay:active{
+	transform: scale(0.50);
+}
+.modal2{overflow: auto; height: 100vh;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	visibility: none;
+	opacity: 1;
+}
+.modal3{overflow: auto; height: 100vh;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: transparent;
+	transition: all 0.9s;
+	visibility: hidden;
+	opacity: 0;
+}
+.modal4{overflow: auto; height: 100vh;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(9,0,9,0.2);
+	visibility: hidden;
+	opacity: 0;
+}
+.modal6{overflow: auto; height: 100vh;
+	position: fixed;
+	top: 0px;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(0,0,9,0.9);
+	/*background: rgba(9,0,9,0.2);*/
+	font-size: 5em;
+	transition: all 0.4s;
+	visibility: hidden;
+	opacity: 0;
+	border: 25px solid #333;
+}
+.modal3:target{
+	visibility: visible;
+	opacity: 1;
+	z-index: 6;
+}
+.modal4:target{
+	visibility: visible;
+	opacity: 1;
+	z-index: 99;
+}
+.modal6:target{
+	visibility: visible;
+	opacity: 1;
+	z-index: 6;
+}
+.modalcontent2{
+	overflow: auto;
+	top: 0px;
+	position: relative;
+	background: white;
+	width: 90%;
+	height: 93vh;
+	padding: 1em 2em;
+	border-radius: 5px;
+	border: 1px solid white;
+	border-top: 15px solid white; 
+	border-bottom: 15px solid white;
+}
+.modalcontent4{
+	overflow: auto;
+	position: fixed;
+	top: 0px;
+	position: relative;
+	background: white;
+	/*background: linear-gradient(150deg, #44ef77, black,  #44ef77);*/
+	width: 500px;
+	max-width: 90%;
+	padding: 1em 2em;
+	border-radius: 5px;
+	border: 3px solid #dedede;
+}
+table{
+	width: 100%; border-collapse: collapse; color: black; background: #f5f5f5;
+}
+table tbody tr:nth-child(even){
+	background: #ffff99;
+}
+thead{
+	background: darkblue;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+}
+td:hover{
+	background: yellow;
+	color: white;
+	cursor: pointer;
+}
+td{
+	border: 1px solid #dddddd; 
+	padding: 2px;
+}
+.en{
+	cursor: pointer;
+	background: lime;
+	color: white;
+	border: none;
+	font-size: 20px;
+	padding: 12px 35px;
+	transition: all 0.4s;
+	margin-top: 8px;
+}
+.en:active{
+	transform: scale(0.80);
+}
+.fir{
+	cursor: pointer;
+	background: lime;
+	color: white;
+	border: none;
+	font-size: 20px;
+	padding: 12px 35px;
+	transition: all 0.4s;
+	margin-top: 8px;
+}
+.fir:active{
+	transform: scale(0.80);
+}
+.barra{
+	margin: 0 auto; height: 3px; width: 80%; background: silver; border-radius: 0px; overflow: hidden;
+}
+.processo{
+	display: block;
+	width: 0%;
+	height: 100%;
+	border-radius: 0px;
+	background: lime;
+	background-size: 50px 50px;
+	animation: load 5s infinite forwards;
+}/*
+@keyframes load{
+	100%{
+		width: 96%;
+	}
+}*/
+#btne1{transition: all 0.4s; padding: 25px 25px; font-size: 15px; left: 5px; bottom: 70px; position: fixed; z-index: 9;}
+#btne0{transition: all 0.4s; padding: 25px 25px; font-size: 15px; left: 5px; bottom: 10px; position: fixed; z-index: 9;}
+#btne0:active{
+	transform: scale(0.50);
+}
+#btne1:active{
+	transform: scale(0.50);
+}
+.btn{
+	border-radius: 5px;
+	background: transparent;
+	border: 2px solid transparent;
+}
+.btn:hover{
+	border: 2px solid aqua;
+	background: rgba(255,255,255,0.9);
+}
+#alt{ background: red;
+	left: 50px; z-index: -9;
+	opacity: 0;
+	bottom: 190px;
+	transition: 1s;
+	position: fixed;
+}
+hr{
+	width: 80%;
+}
+.ia{
+	width: 60px; height: 8.6vh;
+}
+.led{
+	font-size: 30px; 
+	text-align: center;
+}
+.ss{
+	animation: anima 1s linear infinite;
+}
+.txt{
+	font-size: 30px;
+	color: lime;
+	animation: anima 1s linear infinite;
+}
+@keyframes anima{
+50%{
+	color: lime;
+}
+0%{
+	color: aqua;
+}
+}
+.titl{
+	font-size: 25px; color: lime;
+}
+.textos{
+	font-size: 20px; color: #585858;
+}
+#color{
+	color: yellow;
+	text-shadow: 0 30px 0 #fff;
+	font-size: 100px;
+	font-weight: bold;
+	cursor: pointer;
+}
+.sta{
+	animation: sta 1s ease-in-out infinite;
+}
+@keyframes sta{
+	0%,18%,20%,50.1%,60%,65.1%,80%,90.1%,92%
+{
+	color: #fff;
+	text-shadow: none;
+}
+100%
+{
+	color: #fff;
+	text-shadow: 0 0 10px white,
+		0 0 20px white,
+		0 0 40px white;
+}
+}
+img{
+	width: 18px; height: 18px; border-radius: 100% auto 0; cursor: pointer;
+}
+.im{
+	width: 100%;
+	cursor: pointer;
+	height: 50px;
+}
+.bb{
+	font-size: 13px; 
+	color: silver; 
+	text-align: center;
+}
+::-webkit-scrollbar{
+	width: 15px;
+	height: 15px;
+}
+::-webkit-scrollbar-track{
+	background: #ddd;
+}
+::-webkit-scrollbar-thumb{
+	background: silver;
+}
+.tab{
+	width: 80%;
+}
+.container #next, 
+.container #prev{
+	top: 0;
+	right: 50%;
+	font-size: 0px; 
+	position: absolute;
+	color: transparent;
+	z-index: -9;
+}	
+.container .slide{
+	display: none;
+}
+.container .slide.active{
+	border: none;
+	display: block;
+	background: none;
+}
+.container{ padding: 5px;
+	color: #444;
+	border-radius: 5px;
+	border: none;
+	display: block;
+	background: none;
+	z-index: 2;
+	position: fixed;
+	right: 10px;
+	bottom: 10px;
+	background: none;
+}
+.cT{
+	color: #666;
+	margin-top: 2px;
+	background: transparent;
+	font-size: 8px;
+	display: block; 
+    animation: testim .4s ease-in-out forwards;
+}
+@keyframes testim{
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.tEX{
+    animation: start .4s ease-in-out forwards;
+	font-size: 10px;
+}
+@keyframes start{
+    from {
+        opacity: 0;
+        transform: translateY(10%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.ifoto{
+    display: block;
+    width: 35px;
+    height: 35px;
+    margin: auto;
+    border-radius: 50%;
+}
+.ar{
+	font-size: 18px;
+	position: fixed;
+	top: 18px; left: 5px;
+	color: rgba(255,255,255,0.9);
+}
+.bt{ 
+	background: lime; width: 60px; padding: 5px;
+	font-size: 12px;/*
+	position: fixed;
+	top: 19px; */left: 66px;
+	color: rgba(255,255,255,0.9);
+}
+	
+.btt{ 
+	background: orangered; width: 68px; padding: 5px;
+	font-size: 12px;/*
+	position: fixed;
+	top: 19px; */left: 128px;
+	color: rgba(255,255,255,0.9);
+}
+@media only screen and (max-width: 800px){
+body{
+	font-size: 18px;
+}
+#ess{
+	color: #999fff; font-size: 15px;
+}
+.ia{
+	width: 30%; height: 8.6vh;
+}
+.tab{
+	width: 100%;
+}
+td{
+	display: block;
+}
+.led{
+	font-size: 25px;
+}
+.chate{
+	width:100%; margin-top: 10px;
+}
+#btne1{
+	bottom: 60px;
+	padding: 20px 20px;
+}
+#btne0{ 
+	padding: 20px 20px;
+}
+.inpute{
+	width: 100%;
+	color: yellow;
+	font-size: 14px;
+}
+.cent{
+	padding: 30px;	
+	font-size: 15px;
+	background: white;
+	border-radius: 10px;
+	box-shadow: 0 0 0px 0px aqua;
+}
+h1{
+	color: aqua;
+	font-size: 18px;
+	font-weight: bold;
+}
+.txt{
+	color: lime;
+	font-size: 16px;
+}
+.modalcontent1{
+	padding: 1.5em;
+}
+.modalcontent2{
+	padding: 1em;
+}
+.textos{
+	font-size: 15px; color: #ceffcb;
+}
+.titl{
+	font-size: 20px; color: #ceffcb;
+}
+.modalcontent4{
+	background: linear-gradient(150deg, #44ef77, black,  #44ef77);
+}
+#contenteee{
+	color: #777; 
+	padding: 0px; 
+	background: linear-gradient(330deg, #fff, aqua, #fff, aqua);
+}
+.contain ul li{ 
+	width: 100%;
+	color: #fff; 
+	padding: 11px; 
+	font-size: 18px;
+	border: 1px solid #fff;
+}
+.contain{
+	width: 100%;
+	padding: 0em;  
+	font-size: 18px;
+	position: center;
+}
+.play{
+	width: 100%;
+	padding: 11px; 
+	font-size: 18px; 
+	background: linear-gradient(350deg, blue, aqua, aqua);
+}
+.play:hover{
+	background: linear-gradient(350deg, aqua, aqua, blue);
+}
+#plr{
+	background: #aaeeff; padding: 10px; width: 100%;
+}
+.inpt{ 
+	width: 100%;
+	padding: 11px;
+	color:  #deddde; 
+	font-size: 18px;
+	margin-top: 3px;
+	border: 3px solid #dedede;
+}
+#color{
+	font-size: 50px;
+	text-shadow: 0 15px 0 #fff;
+}
+.im{
+	height: 50px;
+}
+.volt{
+	top: 1px;
+	right: 2px;
+	padding: 21px 21px;
+}
+.fir{
+	padding: 13px 36px;
+}
+.ifoto{
+    width: 30px;
+    height: 30px;
+    margin: auto;
+    border-radius: 50%;
+}
 }
 </style>
 </head>
-<body><!--1329 -- 19.03-->
-<p class="texT">Compra Capital KI number visit:<p>
-<div class="box">
-<a href="https://www.contadorvisitasgratis.com" target="_blank" class="alT" title="Visitas"><img src="https://counter3.optistats.ovh/private/contadorvisitasgratis.php?c=wk1xp84lnfng6zj15999ssps95nxx8p4" border="0"></a>
+<body>
+<div class="ppup">
+<div class="popp">
+<div class="cent">
+	<h1 title="Título" style="color: aqua;">Kwanzaki Investe</h1><br/>
+	<p title="Textos" class="txt">Alcance a liberdade financeira!<br/>Invista em nossa empresa e ganhe 25% todos os meses!<!--por mês!--><br/>Comece agora!</p><br/>
+	<center><button id="open" onclick="audio.play()" title="Aceitar">Aceitar</button></center>
+	<center><hr color="silver" size="2" style="margin-top: 5px;" title="Linha HR"/><p id="ess" title="© Oiceo">&copy; <b id="yeare"></b>.</p></center></nav></center>
 </div>
+</div>
+</div>
+
+<!--==================-->
+<center title="Nossos Clintes dizem">
+<div class="container">
+<div class="slide active">
+<p class="cT"><img src="img/i.jpg" class="ifoto"><i>Kwanzaki Investe<br/><p class="tEX">"Bons serviços, estou amando."<br/>25/01</i></p></p>
+<div id="next" onclick="next()"> >  </div>
+<div id="prev" onclick="prev()"> < </div>
+</div>
+
+<div class="slide">
+<p class="cT"><img src="img/i.jpg" class="ifoto"><i>Lucia Lucia<br/><p class="tEX">"Eu amo os vossos serviços."<br/>25/01</i></p></p>
+<div id="next" onclick="next()"> > </div>
+<div id="prev" onclick="prev()"> < </div>
+</div>
+	
+<div class="slide">
+<p class="cT"><img src="img/i.jpg" class="ifoto"><i>Yola Yola<br/><p class="tEX">"A vossa empresa é a melhor."<br/>25/01</i></p></p>
+<div id="next" onclick="next()"> > </div>
+<div id="prev" onclick="prev()"> < </div>
+</div> 
+</div></center>
+<!--==================-->
+
+<!--modal PLAY-->
+<div id="modalbox6" class="modal6">
+<span style="font-size: 15px; position: fixed; z-index: 9; right: 70px; top: 20px; color: white;"><span class="sta">Acerte e ganhe!</span><br/><p style="font-size: 8px;">Que número aparecerá?!</p></span> <a href="#" class="volt" onclick="audio.play()" title="Voltar"></a>
+<div class="ar"> Kz <span id="numero">0</span>,00 <button class="bt">Receber<!--Retirar--></button> <!--<button class="btt">Depositar</button>--></div>
+	<div class="modalcontent6">
+	<div title="Clicar">
+		<span class="somar" onclick="agregar()">
+		<span id="clicks" class="bn">
+			<h1 style="background: #111; box-shadow: 0 0 0 5px yellow,  0 0 0 10px hotpink,  0 0 0 15px limegreen; padding: 55px; font-size: 60px; color: yellow; border-radius: 10px;" id="###lay"><label id="ylabel">000000</label></h1>
+		</span></span></div>
+</div>
+</div>
+</div>
+
+<!--modal PRREFERÊNCIAS-->
+<div id="modalbox7" class="modal4">
+<a href="#" class="volt" onclick="audio.play()" title="Voltar"></a>
+<div class="modalcontent4">
+<center><h1 class="titl" title="Título">Agradecemos pela preferência!</h1><div class="barra"><span class="processo"></span></div><!--<center><hr color="silver" size="3" title="Linha HR"/></center>--></center>
+<a href="https://multimoney.pro/?ref=59832" target="_black"><img src="img/e.gif" class="im" title="Banner" style="margin-top: 8px;"/><br/></a>
+<center><div class="barra"><span class="processo"></span></div><!--<center><hr color="silver" size="3" title="Linha HR"/></center>--></center>
+<center onclick="audio.play()"><a href="#"><input type="submit" class="fir" title="Sim" value="Sim"></a></center> 
+</div>
+</div>
+
+<!--modal 1/4-->
+<div id="modalbox4" class="modal4">
+<a href="#" class="volt" onclick="audio.play()" title="Voltar"></a>
+<div class="modalcontent4">
+<center><h1 class="titl" title="Título">Iniciar</h1><div class="barra"><span class="processo"></span></div><!--<center><hr color="silver" size="3" title="Linha HR"/></center>--></center>
+<p class="textos" title="Textos" style="text-align: left; padding: 5px;">Acesse a sua conta <span style="color: lime;">Unitel money</span> e transfira qualquer valor da tabela de Ofertas mensal a este número <span style="color: lime;">940278820 Unitel money</span> e em todos os meses começarás a receber 25% em sua conta <span style="color: lime;">Unitel money</span>.</p>
+<center><div class="barra"><span class="processo"></span></div><!--<center><hr color="silver" size="3" title="Linha HR"/></center>--></center>
+<center onclick="audio.play()"><a href="#modalbox7"><input type="submit" class="fir" title="Sim" value="Sim"/></a></center> 
+</div>
+</div>
+
+<!--Botões da IA-->
+<a href="#modalbox3" title="1" class="btn" id="btne1" onclick="audio.play()"></a>
+<a href="#" title="0" class="btn" id="btne0" onclick="audio.play()"></a>
+
+<!--modal 1/2-->
+<div id="modalbox2" class="modal2">
+<div class="modalcontent2">
+<!--Investir-->
+<center onclick="audio.play()" id="es"><a href="#modalbox4" style="background-color: lime; color: white; text-align: center; border-radius: 5px; font-weight: bold; display: block; width: 100%; padding: 10px;" title="Investir">Investir</a></center>
+<br/>
+<label id="togL" for="togA" title="Termos e direitos" onclick="audio.play()" class="es">Termos e direitos</label>
+<input id="togA" type="checkbox">
+<div id="contente"><center style="background: lime; width: 100%; color: white; padding: 8px;" title="Título">Termos e direitos</center><br>
+<p title="Textos">A nossa empresa atribue a aceitação total das nossas <a href="pdf.pdf" target="_blank" title="Políticas" style="color: blue;"><span onclick="audio.play()">Políticas</span></a> de trabalho a todos sem exceção, concedendo a valorização deste projecto e a garantia de que todos os clientes ganhem sempre enquanto investem em nossa empresa.</p>
+<br>
+Info: <a href="mailto:p1335614@gmail.com" style="padding: 0px; text-transform: none; width: 0px;" title="Contacto eletrônico" onclick="audio.play()" target="_blank">p1335614@gmail.com.</a>
+</div>
+<br>
+
+<label id="togL" for="togB" title="Estatísticas e ganhos" onclick="audio.play()" class="es">Estatísticas e ganhos</label>
+<input id="togB" type="checkbox">
+<div id="contt"><center style="background: lime; width: 100%; color: white; padding: 8px;" title="Título">Estatísticas e ganhos</center><br>
+<p title="Textos">Dados actuais:</p>
+<br>
+<center><table class="tab" title="Tabela de dados">
+ <thead>
+ <tr style="background: #5ff1dd; color: white; width: 80%;">
+ <td>Clientes</td>
+ <td>Investidos</td>
+ <td>Pagos</td>
+ </tr>
+ </thead>
+ <tbody>
+ <tr style="color: #333;">
+ <td>1<!--178--></td>
+ <td>100,00 Kz<!--20.600,00 Kz--></td>
+ <td>00,00 Kz<!--8.625,67 Kz--></td>
+ </tr>
+ </tbody>
+</table></center>
+
+
+<center><div class="contain">   
+<input class="inpt" id="search" onkeyup="filter()" autocomplete="off" type="text" placeholder="Pesquisar cont..." title="Pesquisar" onclick="audio.play()"/> 
+<ul id="menu" title="Clientes"> 
+
+	<li><p><!--940278820-->667,97 Kz<!--(29/01) + 602,97 Kz(28/01) + 577,97 Kz(27/01) + 552,97 Kz(26/01) + 512,97 Kz(25/01)--></p></li>
+	
+</ul>
+</div></center>
+
+
+<p style="margin-top: 5px;" title="Textos">Agradecemos pela preferência.</p>
+</div><br/>
+
+<div id="es"><center style="background: lime; font-weight: bold; width: 100%; color: white; padding: 10px; cursor: pointer;" title="Ofertas">Ofertas</center><br>
+<p title="Textos">Ofertas mensal:</p><br>
+<table title="Ofertas mensal">
+ <thead>
+ <tr style="background: #5ff1dd; color: white;" class="tree">
+ <td>Investe</td>
+ <td>Ganhas</td>
+ <td>Tempo</td>
+ </tr>
+ </thead>
+ <tbody>
+ <tr class="tTR">
+ <td>100,00 Kz</td>
+ <td>115,00 Kz</td>
+ <td>1 mês</td>
+ </tr>
+ </tbody>
+ <tbody>
+ <tr class="tTR">
+ <td>1000,00 Kz</td>
+ <td>1150,00 Kz</td>
+ <td>1 mês</td>
+ </tr>
+ </tbody>
+ <tbody>
+ <tr class="tTR">
+ <td>10000,00 Kz</td>
+ <td>11500,00 Kz</td>
+ <td>1 mês</td>
+ </tr>
+ </tbody>
+</table>
+</table></div><center><center title="Jogar" style="margin-top:10px; font-weight: bold;" id="plr"><a href="#modalbox6" onclick="audio.play()"><div class="play">Jogar</div></a></center></center>
+</div>
+
+<!--modal 1/3-->
+<div id="modalbox3" class="modal3">
+<div class="modalcontent3" style="padding: 20px; border: 1px solid white; font-size: 17px; right: 25px; bottom: 10px; background: rgba(255,255,255,0.9); color: lime; border-radius: 8px;">
+<div title="Inteligência Artificial">
+<center>
+<span style="color: lime;"><span style="color: lime;">Conversar:<br></span>
+<input id="userBoxe" type="text" title="Escrever" style="color: #999; background: transparent; border: 1px solid #999; border-active: none; padding: 5px; font-family: 15px; border-radius: 15px;" placeholder="Repita as frases" onclick="audio.play()" onkeydown="if(event.keyCode == 13){ talk() }" autocomplete="off" required=""/></span><br>
+</center>
+<center>
+<i id="chatLog" style="color: lime;  margin-top: 1px;">olá.</i><br/>
+</center>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">
+//inteligência artificial.
+var know = {
+"educação" : "estudas",
+"estudas" : "matemática",
+"matemática" : "física",
+"física" : "quântica",
+"quântica" : "astrologia",
+"astrologia" : "tudo bem",
+"tudo bem" : "viajar no tempo",
+"viajar no tempo" : "inteligência",
+"inteligência" : "tecnologia",
+"tecnologia" : "saber",
+"saber" : "programar",
+"programar" : "começar",
+"começar" : "...",
+"olá" : "boas vindas",
+"boas vindas" : "agradeço",
+"agradeço" : "...",
+"1+1" : "2",
+"1+1+2" : "4",
+"1-1" : "0",
+"1-1-0" : "0",
+"1*1" : "1",
+"1*1*1" : "1",
+"1/1" : "1",
+"1/1/1" : "1",
+"número" : "0",
+"0" : "número",
+"1" : "número",
+"2" : "número",
+"3" : "número",
+"4" : "número",
+"5" : "número",
+"6" : "número",
+"7" : "número",
+"8" : "número",
+"9" : "número",
+"números" : "0 1 2 3 4 5 6 7 8 9",
+"letra" : "a",
+"a" : "letra",
+"e" : "letra",
+"i" : "letra",
+"o" : "letra",
+"u" : "letra",
+"letras" : "a e i o u",
+"e0" : "👩🏾‍🚀📊🧚🏾‍♀️👩🏾‍🦳👩🏾‍🦰⌚☀🌀🌌",
+"e1" : "🌌🌀☀⌚👩🏾‍🦰👩🏾‍🦳",
+"e2" : "🌌🌀☀⌚👩🏾‍🦰👩🏾‍🦳🧚🏾‍♀️📊👩🏾‍🚀📈🏆🏅🥰👱🏾‍♀️",
+}; 
+function talk(){
+var user = document.getElementById("userBoxe").value;
+document.getElementById("chatLog").innerHTML = user + "<br/>";
+if (user in know){
+document.getElementById("chatLog").innerHTML = know[user] + "<br/>";
+}else{
+document.getElementById("chatLog").innerHTML = "Responda correctamente!<br/>";
+}
+}
+</script>
+
+<script type="text/javascript">
+//Script ÁUDIO clicks
+	var audio = new Audio();
+	audio.src = 'audio/i.mp3';
+</script>
+
+<script type="text/javascript">
+	const soma = document.querySelector(".somar");
+	const resta = document.querySelector(".restars");
+	const numeros = document.querySelector("#numero");
+	let numero = 0;
+	
+	function agregar(){
+		numero++;
+		numeros.textContent=numero;
+	}
+	function restar(){
+		numero==0? numero=0:
+		numero--;
+		numeros.textContent=numero;
+	}
+</script>
+	
+<!--<script type="text/javascript">
+//Script POST
+let slides = document.querySelectorAll('.slide');
+let index = 0;
+
+function next(){
+	slides[index].classList.remove('active');
+	index = (index + 1) % slides.length;
+	slides[index].classList.add('active');
+}
+function prev(){
+	slides[index].classList.remove('active');
+	index = (index - 1 + slides.length) % slides.length;
+	slides[index].classList.add('active');
+}
+</script>
+
+<script>
+//akwanzas CLICKS & CLICKS
+	//setInterval("document.getElementById('next').click()", 10000);
+</script>-->
+
+<script type="text/javascript">
+//Script MENU PRINCIPAL
+window.addEventListener("load", function(){
+	setTimeout(
+		function open(event){
+			document.querySelector(".ppup").style.display = "block";
+		},
+		0
+	)
+});
+document.querySelector("#open").addEventListener ("click", function(){
+	document.querySelector(".ppup").style.display = "none";
+});
+</script>
+
+<script type="text/javascript">
+//Script TEMPO
+	const yeare = document.getElementById('yeare');
+	yeare.textContent = new Date().getFullYear();
+</script>
+	
+<script type="text/javascript">
+//oiceo CLICKS
+let y;
+document.getElementById("ylabel").onclick = function(){
+y = Math.floor(Math.random() * 123456); 
+document.getElementById("ylabel").innerHTML = y;
+}
+</script>
+<script type="text/javascript">
+	//Script CLICKS
+	setInterval("document.getElementById('ylabel').click()", 6000);
+</script>
+<script type="text/javascript">
+//script SEARCH
+function filter(){ var filterValue, input, ul,li,p,i; input = document.getElementById("search"); filterValue = input.value.toUpperCase(); ul = document.getElementById("menu"); li = ul.getElementsByTagName("li"); for (i = 0 ; i < li.length ; i++){ p = li[i].getElementsByTagName("p")[0]; if(p.innerHTML.toUpperCase().indexOf(filterValue) > -1){ li[i].style.display = ""; }else{ li[i].style.display = "none"; } } }
+</script> 
+<a href="https://www.contadorvisitasgratis.com" target="_blank" id="alt" title="Visitas"><img src="https://counter3.optistats.ovh/private/contadorvisitasgratis.php?c=wk1xp84lnfng6zj15999ssps95nxx8p4" border="0"></a>
 </body>
 </html>
